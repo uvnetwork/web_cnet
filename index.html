@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CNET — Servicios Tecnológicos e Infraestructura</title>
+  <meta name="description" content="CNET: soluciones integrales de tecnología para pymes y empresas. Soporte técnico, redes, ciberseguridad, CCTV y electricidad en baja tensión.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            corporativo: {
+              50: '#eef6ff', 100: '#d9eaff', 200: '#bcdbff',
+              300: '#8ec4ff', 400: '#59a3ff', 500: '#3380fc',
+              600: '#1d60f1', 700: '#154ade', 800: '#183db4',
+              900: '#19398d', 950: '#142454',
+            },
+            noche: '#0b1526',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .revelar { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+    .revelar.visible { opacity: 1; transform: none; }
+    .gradiente-hero { background: radial-gradient(ellipse at 20% 20%, rgba(51,128,252,.25), transparent 55%), radial-gradient(ellipse at 85% 30%, rgba(24,61,180,.28), transparent 50%), #0b1526; }
+    .rejilla { background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px); background-size: 44px 44px; }
+    details.faq summary::-webkit-details-marker { display: none; }
+  </style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+  <!-- ══════════ NAVEGACIÓN ══════════ -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-noche/80 backdrop-blur-md border-b border-white/10">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between px-5 sm:px-8 h-16">
+      <a href="#" class="flex items-center gap-2 text-white font-extrabold text-xl tracking-tight">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-corporativo-600 text-white text-sm font-bold">CN</span>
+        CNET
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-200">
+        <a href="#nosotros" class="hover:text-white transition">Nosotros</a>
+        <a href="#servicios" class="hover:text-white transition">Servicios</a>
+        <a href="#contacto" class="hover:text-white transition">Contacto</a>
+        <a href="#contacto" class="bg-corporativo-600 hover:bg-corporativo-500 text-white px-4 py-2 rounded-lg transition">Solicitar presupuesto</a>
+      </div>
+      <button id="btnMenu" class="md:hidden text-white p-2" aria-label="Menú">
+        <svg id="iconoMenu" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </nav>
+    <div id="menuMovil" class="md:hidden hidden bg-noche border-t border-white/10 px-6 py-4 space-y-3 text-slate-200">
+      <a href="#nosotros" class="block py-1 hover:text-white">Nosotros</a>
+      <a href="#servicios" class="block py-1 hover:text-white">Servicios</a>
+      <a href="#contacto" class="block py-1 hover:text-white">Contacto</a>
+      <a href="#contacto" class="block mt-2 bg-corporativo-600 text-center text-white px-4 py-2.5 rounded-lg font-medium">Solicitar presupuesto</a>
+    </div>
+  </header>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section class="gradiente-hero rejilla relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 pt-36 pb-28 md:pt-44 md:pb-36 text-center">
+      <p class="revelar inline-block text-corporativo-300 text-sm font-semibold tracking-widest uppercase mb-5 border border-corporativo-400/30 rounded-full px-4 py-1.5 bg-corporativo-500/10">
+        Tecnología · Infraestructura · Seguridad
+      </p>
+      <h1 class="revelar text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight" style="transition-delay:.1s">
+        Tu empresa, conectada<br class="hidden sm:block">
+        <span class="text-corporativo-400">y protegida</span>
+      </h1>
+      <p class="revelar mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed" style="transition-delay:.2s">
+        En CNET diseñamos, instalamos y mantenemos la infraestructura tecnológica de tu negocio: redes, seguridad, soporte informático y electricidad. Un único socio para toda tu tecnología.
+      </p>
+      <div class="revelar mt-10 flex flex-col sm:flex-row items-center justify-center gap-4" style="transition-delay:.3s">
+        <a href="#contacto" class="w-full sm:w-auto bg-corporativo-600 hover:bg-corporativo-500 text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg shadow-corporativo-600/30 transition">
+          Solicitar presupuesto
+        </a>
+        <a href="#servicios" class="w-full sm:w-auto border border-white/25 hover:border-white/50 text-white font-semibold px-8 py-3.5 rounded-xl transition">
+          Ver servicios
+        </a>
+      </div>
+      <div class="revelar mt-14 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-slate-400 text-sm" style="transition-delay:.4s">
+        <span class="flex items-center gap-2"><svg class="w-4 h-4 text-corporativo-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.7-9.3a1 1 0 00-1.4-1.4L9 10.6 7.7 9.3a1 1 0 00-1.4 1.4l2 2a1 1 0 001.4 0l4-4z"/></svg>Respuesta en 24h</span>
+        <span class="flex items-center gap-2"><svg class="w-4 h-4 text-corporativo-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.7-9.3a1 1 0 00-1.4-1.4L9 10.6 7.7 9.3a1 1 0 00-1.4 1.4l2 2a1 1 0 001.4 0l4-4z"/></svg>Especialistas en pymes</span>
+        <span class="flex items-center gap-2"><svg class="w-4 h-4 text-corporativo-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.7-9.3a1 1 0 00-1.4-1.4L9 10.6 7.7 9.3a1 1 0 00-1.4 1.4l2 2a1 1 0 001.4 0l4-4z"/></svg>Servicio integral</span>
+      </div>
+    </div>
+    <div class="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-corporativo-500/50 to-transparent"></div>
+  </section>
+
+  <!-- ══════════ SOBRE NOSOTROS ══════════ -->
+  <section id="nosotros" class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid md:grid-cols-2 gap-12 items-center">
+      <div class="revelar">
+        <p class="text-corporativo-600 font-semibold text-sm tracking-widest uppercase mb-3">Sobre nosotros</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-noche tracking-tight">
+          Soluciones tecnológicas integrales, bajo un mismo techo
+        </h2>
+        <p class="mt-5 text-slate-600 leading-relaxed">
+          CNET nace para resolver un problema real de las pymes: tener que coordinar a cinco proveedores distintos para su tecnología. Nosotros lo cubrimos todo — desde el cableado y la electricidad hasta la ciberseguridad y el soporte del día a día — con un único equipo que responde.
+        </p>
+        <ul class="mt-7 space-y-4">
+          <li class="flex gap-3">
+            <span class="mt-0.5 inline-flex w-6 h-6 shrink-0 items-center justify-center rounded-full bg-corporativo-100 text-corporativo-700"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z"/></svg></span>
+            <div><strong class="text-noche">Un solo interlocutor.</strong> <span class="text-slate-600">Menos gestión, menos malentendidos, más rapidez.</span></div>
+          </li>
+          <li class="flex gap-3">
+            <span class="mt-0.5 inline-flex w-6 h-6 shrink-0 items-center justify-center rounded-full bg-corporativo-100 text-corporativo-700"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z"/></svg></span>
+            <div><strong class="text-noche">Proyectos llave en mano.</strong> <span class="text-slate-600">Del diseño a la puesta en marcha y el mantenimiento.</span></div>
+          </li>
+          <li class="flex gap-3">
+            <span class="mt-0.5 inline-flex w-6 h-6 shrink-0 items-center justify-center rounded-full bg-corporativo-100 text-corporativo-700"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z"/></svg></span>
+            <div><strong class="text-noche">Cercanía y trato directo.</strong> <span class="text-slate-600">Técnicos que conocen tu instalación y tu negocio.</span></div>
+          </li>
+        </ul>
+      </div>
+      <div class="revelar grid grid-cols-2 gap-4" style="transition-delay:.15s">
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+          <p class="text-3xl font-extrabold text-corporativo-600">5+</p>
+          <p class="mt-1 text-sm text-slate-600">Áreas de especialización integradas</p>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+          <p class="text-3xl font-extrabold text-corporativo-600">24h</p>
+          <p class="mt-1 text-sm text-slate-600">Tiempo máximo de respuesta</p>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+          <p class="text-3xl font-extrabold text-corporativo-600">100%</p>
+          <p class="mt-1 text-sm text-slate-600">Orientado a pymes y empresas</p>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+          <p class="text-3xl font-extrabold text-corporativo-600">360°</p>
+          <p class="mt-1 text-sm text-slate-600">Cobertura tecnológica completa</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ SERVICIOS ══════════ -->
+  <section id="servicios" class="py-20 md:py-28 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto revelar">
+        <p class="text-corporativo-600 font-semibold text-sm tracking-widest uppercase mb-3">Servicios</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-noche tracking-tight">Todo lo que tu empresa necesita</h2>
+        <p class="mt-4 text-slate-600">Cinco líneas de servicio coordinadas entre sí. Contrata una o combínalas — siempre con el mismo equipo.</p>
+      </div>
+
+      <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Soporte técnico -->
+        <article class="revelar group bg-white rounded-2xl border border-slate-200 p-7 hover:shadow-xl hover:shadow-corporativo-600/5 hover:-translate-y-1 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-corporativo-100 text-corporativo-700 flex items-center justify-center mb-5 group-hover:bg-corporativo-600 group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-noche">Soporte Técnico y Microinformática</h3>
+          <p class="mt-2.5 text-sm text-slate-600 leading-relaxed">Mantenimiento de equipos, helpdesk, instalación de software, copias de seguridad y continuidad del trabajo diario.</p>
+          <details class="faq mt-4">
+            <summary class="text-sm font-semibold text-corporativo-700 cursor-pointer select-none">Ver detalles →</summary>
+            <ul class="mt-3 space-y-1.5 text-sm text-slate-600 list-disc list-inside">
+              <li>Contratos de mantenimiento mensual</li>
+              <li>Asistencia remota y presencial</li>
+              <li>Gestión de equipos y licencias</li>
+              <li>Copias de seguridad y recuperación</li>
+            </ul>
+          </details>
+        </article>
+
+        <!-- Redes -->
+        <article class="revelar group bg-white rounded-2xl border border-slate-200 p-7 hover:shadow-xl hover:shadow-corporativo-600/5 hover:-translate-y-1 transition-all" style="transition-delay:.05s">
+          <div class="w-12 h-12 rounded-xl bg-corporativo-100 text-corporativo-700 flex items-center justify-center mb-5 group-hover:bg-corporativo-600 group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-noche">Redes, Telecomunicaciones y Desarrollo Web</h3>
+          <p class="mt-2.5 text-sm text-slate-600 leading-relaxed">Cableado estructurado, WiFi empresarial, telefonía IP, fibra y presencia web profesional para tu negocio.</p>
+          <details class="faq mt-4">
+            <summary class="text-sm font-semibold text-corporativo-700 cursor-pointer select-none">Ver detalles →</summary>
+            <ul class="mt-3 space-y-1.5 text-sm text-slate-600 list-disc list-inside">
+              <li>Cableado de datos y racks certificados</li>
+              <li>Redes WiFi de alta densidad</li>
+              <li>Centralitas VoIP y comunicaciones</li>
+              <li>Diseño web y mantenimiento</li>
+            </ul>
+          </details>
+        </article>
+
+        <!-- Ciberseguridad -->
+        <article class="revelar group bg-white rounded-2xl border border-slate-200 p-7 hover:shadow-xl hover:shadow-corporativo-600/5 hover:-translate-y-1 transition-all" style="transition-delay:.1s">
+          <div class="w-12 h-12 rounded-xl bg-corporativo-100 text-corporativo-700 flex items-center justify-center mb-5 group-hover:bg-corporativo-600 group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-noche">Ciberseguridad y Auditorías</h3>
+          <p class="mt-2.5 text-sm text-slate-600 leading-relaxed">Protección de datos, firewalls, auditorías de seguridad y cumplimiento normativo para que duermas tranquilo.</p>
+          <details class="faq mt-4">
+            <summary class="text-sm font-semibold text-corporativo-700 cursor-pointer select-none">Ver detalles →</summary>
+            <ul class="mt-3 space-y-1.5 text-sm text-slate-600 list-disc list-inside">
+              <li>Auditorías y análisis de vulnerabilidades</li>
+              <li>Firewalls, VPN y acceso remoto seguro</li>
+              <li>Antivirus corporativo y EDR</li>
+              <li>Formación anti-phishing para equipos</li>
+            </ul>
+          </details>
+        </article>
+
+        <!-- CCTV -->
+        <article class="revelar group bg-white rounded-2xl border border-slate-200 p-7 hover:shadow-xl hover:shadow-corporativo-600/5 hover:-translate-y-1 transition-all" style="transition-delay:.15s">
+          <div class="w-12 h-12 rounded-xl bg-corporativo-100 text-corporativo-700 flex items-center justify-center mb-5 group-hover:bg-corporativo-600 group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-noche">Seguridad Electrónica y CCTV</h3>
+          <p class="mt-2.5 text-sm text-slate-600 leading-relaxed">Videovigilancia, control de accesos, alarmas e intrusión. Instalación certificada y monitorización profesional.</p>
+          <details class="faq mt-4">
+            <summary class="text-sm font-semibold text-corporativo-700 cursor-pointer select-none">Ver detalles →</summary>
+            <ul class="mt-3 space-y-1.5 text-sm text-slate-600 list-disc list-inside">
+              <li>CCTV IP con visión nocturna y analítica</li>
+              <li>Control de accesos y cerraduras</li>
+              <li>Alarmas e integración con CRA</li>
+              <li>Acceso remoto desde el móvil</li>
+            </ul>
+          </details>
+        </article>
+
+        <!-- Electricidad -->
+        <article class="revelar group bg-white rounded-2xl border border-slate-200 p-7 hover:shadow-xl hover:shadow-corporativo-600/5 hover:-translate-y-1 transition-all" style="transition-delay:.2s">
+          <div class="w-12 h-12 rounded-xl bg-corporativo-100 text-corporativo-700 flex items-center justify-center mb-5 group-hover:bg-corporativo-600 group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-noche">Electricidad en Baja Tensión</h3>
+          <p class="mt-2.5 text-sm text-slate-600 leading-relaxed">Instalaciones eléctricas, cuadros, iluminación eficiente y certificados para oficinas, naves y locales.</p>
+          <details class="faq mt-4">
+            <summary class="text-sm font-semibold text-corporativo-700 cursor-pointer select-none">Ver detalles →</summary>
+            <ul class="mt-3 space-y-1.5 text-sm text-slate-600 list-disc list-inside">
+              <li>Instalaciones y reformas eléctricas</li>
+              <li>Cuadros y protecciones</li>
+              <li>Iluminación LED eficiente</li>
+              <li>Boletines y legalización</li>
+            </ul>
+          </details>
+        </article>
+
+        <!-- CTA card -->
+        <article class="revelar bg-noche rounded-2xl p-7 flex flex-col justify-between" style="transition-delay:.25s">
+          <div>
+            <h3 class="text-lg font-bold text-white">¿No sabes por dónde empezar?</h3>
+            <p class="mt-2.5 text-sm text-slate-300 leading-relaxed">Cuéntanos tu caso y te proponemos la solución más eficiente — sin compromiso y en 24 horas.</p>
+          </div>
+          <a href="#contacto" class="mt-6 inline-flex items-center justify-center bg-corporativo-600 hover:bg-corporativo-500 text-white font-semibold px-6 py-3 rounded-xl transition">
+            Hablar con un técnico
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ PROCESO ══════════ -->
+  <section class="py-20 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto revelar">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-noche tracking-tight">Así trabajamos</h2>
+      </div>
+      <div class="mt-14 grid sm:grid-cols-3 gap-8">
+        <div class="revelar text-center">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-corporativo-600 text-white flex items-center justify-center text-xl font-extrabold">1</div>
+          <h3 class="mt-5 font-bold text-noche">Diagnóstico</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Visitamos tu instalación, escuchamos tus necesidades y evaluamos el estado actual sin coste.</p>
+        </div>
+        <div class="revelar text-center" style="transition-delay:.1s">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-corporativo-600 text-white flex items-center justify-center text-xl font-extrabold">2</div>
+          <h3 class="mt-5 font-bold text-noche">Propuesta clara</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Presupuesto detallado, sin letra pequeña, con plazos y garantías por escrito.</p>
+        </div>
+        <div class="revelar text-center" style="transition-delay:.2s">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-corporativo-600 text-white flex items-center justify-center text-xl font-extrabold">3</div>
+          <h3 class="mt-5 font-bold text-noche">Ejecución y soporte</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Instalamos, documentamos y quedamos disponibles para mantenimiento y futuras ampliaciones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CONTACTO ══════════ -->
+  <section id="contacto" class="py-20 md:py-28 bg-noche">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14">
+      <div class="revelar">
+        <p class="text-corporativo-400 font-semibold text-sm tracking-widest uppercase mb-3">Contacto</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Hablemos de tu proyecto</h2>
+        <p class="mt-5 text-slate-300 leading-relaxed">
+          Cuéntanos qué necesita tu empresa y te respondemos en menos de 24 horas laborables con una propuesta clara.
+        </p>
+        <ul class="mt-9 space-y-5 text-slate-300">
+          <li class="flex items-center gap-4">
+            <span class="w-10 h-10 shrink-0 rounded-lg bg-white/10 flex items-center justify-center text-corporativo-400"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></span>
+            <a href="mailto:info@cnet.es" class="hover:text-white transition">info@cnet.es</a>
+          </li>
+          <li class="flex items-center gap-4">
+            <span class="w-10 h-10 shrink-0 rounded-lg bg-white/10 flex items-center justify-center text-corporativo-400"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></span>
+            <a href="tel:+34600000000" class="hover:text-white transition">+34 600 000 000</a>
+          </li>
+          <li class="flex items-center gap-4">
+            <span class="w-10 h-10 shrink-0 rounded-lg bg-white/10 flex items-center justify-center text-corporativo-400"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></span>
+            <span>Madrid, España</span>
+          </li>
+          <li class="flex items-center gap-4">
+            <span class="w-10 h-10 shrink-0 rounded-lg bg-white/10 flex items-center justify-center text-corporativo-400"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
+            <span>Lun–Vie · 9:00 – 18:00</span>
+          </li>
+        </ul>
+      </div>
+
+      <form id="formContacto" class="revelar bg-white/5 border border-white/10 rounded-2xl p-7 sm:p-9 backdrop-blur" style="transition-delay:.15s" novalidate>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="nombre" class="block text-sm font-medium text-slate-300 mb-1.5">Nombre *</label>
+            <input id="nombre" name="nombre" required type="text" placeholder="Tu nombre"
+              class="w-full rounded-lg bg-white/10 border border-white/10 px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-corporativo-500 focus:border-transparent transition">
+          </div>
+          <div>
+            <label for="empresa" class="block text-sm font-medium text-slate-300 mb-1.5">Empresa</label>
+            <input id="empresa" name="empresa" type="text" placeholder="Nombre de tu empresa"
+              class="w-full rounded-lg bg-white/10 border border-white/10 px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-corporativo-500 focus:border-transparent transition">
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5 mt-5">
+          <div>
+            <label for="email" class="block text-sm font-medium text-slate-300 mb-1.5">Email *</label>
+            <input id="email" name="email" required type="email" placeholder="tu@empresa.com"
+              class="w-full rounded-lg bg-white/10 border border-white/10 px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-corporativo-500 focus:border-transparent transition">
+          </div>
+          <div>
+            <label for="telefono" class="block text-sm font-medium text-slate-300 mb-1.5">Teléfono</label>
+            <input id="telefono" name="telefono" type="tel" placeholder="600 000 000"
+              class="w-full rounded-lg bg-white/10 border border-white/10 px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-corporativo-500 focus:border-transparent transition">
+          </div>
+        </div>
+        <div class="mt-5">
+          <label for="servicio" class="block text-sm font-medium text-slate-300 mb-1.5">Servicio de interés</label>
+          <select id="servicio" name="servicio"
+            class="w-full rounded-lg bg-white/10 border border-white/10 px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-corporativo-500 focus:border-transparent transition">
+            <option class="text-slate-900" value="">Selecciona una opción</option>
+            <option class="text-slate-900">Soporte Técnico y Microinformática</option>
+            <option class="text-slate-900">Redes, Telecomunicaciones y Desarrollo Web</option>
+            <option class="text-slate-900">Ciberseguridad y Auditorías</option>
+            <option class="text-slate-900">Seguridad Electrónica y CCTV</option>
+            <option class="text-slate-900">Electricidad en Baja Tensión</option>
+            <option class="text-slate-900">Proyecto integral / Varios servicios</option>
+          </select>
+        </div>
+        <div class="mt-5">
+          <label for="mensaje" class="block text-sm font-medium text-slate-300 mb-1.5">Mensaje *</label>
+          <textarea id="mensaje" name="mensaje" required rows="4" placeholder="Cuéntanos brevemente qué necesitas…"
+            class="w-full rounded-lg bg-white/10 border border-white/10 px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-corporativo-500 focus:border-transparent transition resize-none"></textarea>
+        </div>
+        <button type="submit" class="mt-7 w-full bg-corporativo-600 hover:bg-corporativo-500 text-white font-semibold py-3.5 rounded-xl shadow-lg shadow-corporativo-600/25 transition">
+          Enviar solicitud
+        </button>
+        <p id="formMsg" class="hidden mt-4 text-center text-sm font-medium"></p>
+        <p class="mt-4 text-xs text-slate-500 text-center">Al enviar aceptas que contactemos contigo respecto a tu solicitud.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer class="bg-noche border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <a href="#" class="flex items-center gap-2 text-white font-extrabold text-lg">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-corporativo-600 text-white text-sm font-bold">CN</span>
+        CNET
+      </a>
+      <nav class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-slate-400">
+        <a href="#nosotros" class="hover:text-white transition">Nosotros</a>
+        <a href="#servicios" class="hover:text-white transition">Servicios</a>
+        <a href="#contacto" class="hover:text-white transition">Contacto</a>
+      </nav>
+      <p class="text-xs text-slate-500">© <span id="anio"></span> CNET — Servicios Tecnológicos e Infraestructura</p>
+    </div>
+  </footer>
+
+  <script>
+    // Menú móvil
+    const btnMenu = document.getElementById('btnMenu');
+    const menuMovil = document.getElementById('menuMovil');
+    btnMenu.addEventListener('click', () => menuMovil.classList.toggle('hidden'));
+    menuMovil.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => menuMovil.classList.add('hidden'))
+    );
+
+    // Año del footer
+    document.getElementById('anio').textContent = new Date().getFullYear();
+
+    // Animación al hacer scroll (IntersectionObserver)
+    const observador = new IntersectionObserver(
+      entradas => entradas.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observador.unobserve(e.target);
+        }
+      }),
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll('.revelar').forEach(el => observador.observe(el));
+
+    // Formulario: por ahora abre el cliente de correo con el contenido.
+    // TODO: conectar a un backend (Formspree, Supabase Edge Function, etc.)
+    document.getElementById('formContacto').addEventListener('submit', e => {
+      e.preventDefault();
+      const f = e.target;
+      const nombre = f.nombre.value.trim();
+      const email = f.email.value.trim();
+      const mensaje = f.mensaje.value.trim();
+      const msg = document.getElementById('formMsg');
+
+      if (!nombre || !email || !mensaje) {
+        msg.textContent = 'Por favor completa los campos obligatorios.';
+        msg.className = 'mt-4 text-center text-sm font-medium text-red-400';
+        return;
+      }
+
+      const cuerpo = encodeURIComponent(
+        `Nombre: ${nombre}\nEmpresa: ${f.empresa.value}\nEmail: ${email}\nTeléfono: ${f.telefono.value}\nServicio: ${f.servicio.value}\n\n${mensaje}`
+      );
+      window.location.href = `mailto:info@cnet.es?subject=${encodeURIComponent('Solicitud web — ' + nombre)}&body=${cuerpo}`;
+
+      msg.textContent = 'Se ha abierto tu correo para enviar la solicitud. ¡Gracias!';
+      msg.className = 'mt-4 text-center text-sm font-medium text-emerald-400';
+      f.reset();
+    });
+  </script>
+</body>
+</html>
